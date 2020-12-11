@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    .row
+        .col-sm-8
+            h1 course db
+                
+    table.table
+        thead
+            a(href="/courses/add", class="btn btn-secondary float right  ") Add Course
+                tr
+                    th(style="text-align:center") Name
+                    th(style="text-align:center") ID
+                    th(style="text-align:center") Duration
+                    th(style="text-align:center") Fee
+                    th(style="text-align:center") 
+            tbody
+                each course in courses
+                    tr
+                        td(style="text-align:center")=course.name
+                        td(style="text-align:center")=course.id
+                        td(style="text-align:center")=course.duration
+                        td(style="text-align:center")=course.fee
+                        td(style="text-align:center")
+                            a(href="/courses/delete/"+course._id) Delete /
+                            a(href="/courses/edit/"+course._id,) Edit
